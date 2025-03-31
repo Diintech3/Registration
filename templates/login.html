@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LOGIN</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .container {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-style: inherit;
+      font-family: 'poppins', sans-serif;
+    }
+
+    .first {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .box1 {
+      float: left;
+      padding-right: 30px;
+    }
+
+    .box2 {
+      padding-top: 20px;
+      float: right;
+      padding-left: 30px;
+    }
+
+    .logintxt {
+      padding-top: 50px;
+      padding-left: 30px;
+    }
+
+    form {
+      width: 500px;
+      height: 650px;
+      box-shadow: 0px 0px 10px 0px rgb(221, 221, 221);
+      margin-top: 30px;
+    }
+
+    .input3 {
+      width: 200px;
+      height: 30px;
+      font-size: 18px;
+    }
+
+    .input5 {
+      width: 350px;
+      height: 30px;
+      font-size: 18px;
+    }
+
+    .first button {
+      position: relative;
+      color: #f403af;
+      display: inline-block;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      padding: 10px 20px;
+      border: 0;
+      overflow: hidden;
+      border-radius: 5px;
+      transition: 0.5s;
+    }
+
+    .first button span {
+      position: absolute;
+    }
+
+    .first button span:nth-child(1) {
+      top: 0;
+      left: -100%;
+      height: 2px;
+      width: 100%;
+      background: linear-gradient(90deg, transparent,  #f403af);
+      animation: toplineAnimation 1s linear infinite;
+    }
+
+    @keyframes toplineAnimation {
+      0% {
+        left: -100%;
+      }
+
+      50%,
+      100% {
+        left: 100%;
+      }
+    }
+
+    .first button span:nth-child(2) {
+      top: -100%;
+      right: 0;
+      height: 100%;
+      width: 2px;
+      background: linear-gradient(180deg, transparent,  #f403af);
+      animation: rightlineAnimation 1s linear infinite;
+      animation-delay: 0.25s;
+    }
+
+    @keyframes rightlineAnimation {
+      0% {
+        top: -100%;
+      }
+
+      50%,
+      100% {
+        top: 100%;
+      }
+    }
+
+    .first button span:nth-child(3) {
+      right: -100%;
+      bottom: 0;
+      height: 2px;
+      width: 100%;
+      background: linear-gradient(270deg, transparent, #f403af);
+      animation: bottomlineAnimation 1s linear infinite;
+      animation-delay: 0.5s;
+    }
+
+    @keyframes bottomlineAnimation {
+      0% {
+        right: -100%;
+      }
+
+      50%,
+      100% {
+        right: 100%;
+      }
+    }
+
+    .first button span:nth-child(4) {
+      bottom: -100%;
+      left: 0;
+      height: 100%;
+      width: 2px;
+      background: linear-gradient(360deg, transparent, #f403af);
+      animation: leftlineAnimation 1s linear infinite;
+      animation-delay: 0.75s;
+    }
+
+    @keyframes leftlineAnimation {
+      0% {
+        bottom: -100%;
+      }
+
+      50%,
+      100% {
+        bottom: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container-fluid g-0 g-md-1">
+    <div class="first">
+      <form action="{% url 'login' %}" method="post">
+        {% csrf_token %}
+        <br />
+        <div class="logintxt">
+          <h2><b>Login</b> or <b>Signup</b></h2>
+          <br />
+          <br />
+
+          <div class="class1">
+            <label for="inputemail4">Email</label>&nbsp; &nbsp; &nbsp; &nbsp;<input type="email" name="email"
+              class="input5" id="inputemail4" />
+          </div>
+          <br />
+          <br />
+          <div class="class2">
+            <label for="inputpassword4">Password</label> &nbsp; &nbsp;<input type="password" name="paas" class="input3"
+              id="inputpassword4" />&nbsp; &nbsp;
+          </div>
+          <br />
+          <p style="color: rgb(132, 132, 132);">
+            By continueing, I agree to the <b style="color: red;">Term of use</b> &
+            <b style="color: red;">Privacy Policy</b>
+          </p>
+          <br />
+          <br />
+          {% comment %} <button class="log-btn" type="submit" style>Submit</button> {% endcomment %}
+          <button type="submit">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Submit
+          </button>
+          <br />
+          <br />
+          <p style="color: rgb(132, 132, 132); text-align: center;">
+            Have trouble logging in? <b style="color: red;">Get help</b>
+          </p>
+          <br />
+          <p style="color: rgb(132, 132, 132); text-align: center;">
+            Don't have an account..<b style="color: red;"><a href="{% url 'signup' %}">Sign Up</a></b>
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>

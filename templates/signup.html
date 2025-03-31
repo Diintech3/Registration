@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title> SIGNUP</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .container {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-style: inherit;
+      font-family: 'poppins', sans-serif;
+    }
+
+    .first {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .box1 {
+      float: left;
+      padding-right: 30px;
+    }
+
+    .box2 {
+      padding-top: 20px;
+      float: right;
+      padding-left: 30px;
+    }
+
+    .logintxt {
+      padding-top: 30px;
+      padding-left: 30px;
+    }
+
+    form {
+      width: 500px;
+      height: 650px;
+      box-shadow: 0px 0px 10px 0px rgb(221, 221, 221);
+      margin-top: 30px;
+    }
+
+    .class1 {
+      padding-bottom: 30px;
+      font-size: 16px;
+    }
+
+    .input1 {
+      width: 150px;
+      height: 30px;
+      font-size: 18px;
+    }
+
+    .input2 {
+      width: 150px;
+      height: 30px;
+      font-size: 18px;
+    }
+
+    .input3 {
+      width: 150px;
+      height: 30px;
+      font-size: 18px;
+    }
+
+    .input4 {
+      width: 150px;
+      height: 30px;
+      font-size: 18px;
+    }
+
+    .input5 {
+      width: 350px;
+      height: 30px;
+      font-size: 18px;
+    }
+
+    .log-btn {
+      width: 400px;
+      height: 50px;
+      background-color: red;
+      color: white;
+      text-align: center;
+      outline: 0;
+      text-decoration: none;
+      border: none;
+      background-color: red;
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+      margin-left: 5%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container-fluid g-0 g-md-1">
+    <div class="first">
+      <form action="{% url 'signup' %}" method="post">
+        {% csrf_token %}
+        <div class="logintxt">
+          <h2><b>Login</b> or <b>Signup</b></h2>
+          <br>
+          <br>
+          <div class="class1">
+            <label for="inputemail4">First Name</label> &nbsp;<input type="text" name="fname" class="input2"
+              id="inputemail4">&nbsp;
+            <label for="inputpassword4">Last Name</label> &nbsp;<input type="text" name="lname" class="input1"
+              id="inputpassword4">
+          </div>
+
+          <div class="class1">
+            <label for="inputpassword4">Password</label> &nbsp; &nbsp;<input type="password" name="paas" class="input3"
+              id="inputpassword4">&nbsp; &nbsp;
+            <label for="inputpassword4">Mobile</label> &nbsp;<input type="number" name="mob" class="input4"
+              id="inputpassword4">
+          </div>
+
+          <div class="class2">
+            <label for="inputemail4">Email</label>
+            <input type="email" name="email" class="input5" id="inputemail4">
+          </div>
+          <br>
+          <br>
+          <p style="color: rgb(132, 132, 132);">By continueing, I agree to the <b style="color: red;">Term of use</b> &
+            <b style="color: red;">Privacy Policy</b>
+          </p>
+          <br>
+          <br>
+          <button class="log-btn" type="submit">Continue</button>
+          <br>
+          <br>
+          <p style="color: rgb(132, 132, 132); text-align: center;">Have trouble logging in? <b style="color: red;">Get
+              help</b></p>
+          <p style="color: rgb(132, 132, 132); text-align: center; line-height: 30px;">Already have an account, <b
+              style="color: red;"><a href="{% url 'login' %}">Login</a></b></p>
+      </form>
+    </div>
+  </div>
+  </div>
+</body>
+
+</html>
