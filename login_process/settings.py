@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-%*s637b5129mgm+d)#7=13qh)!u-f@r4f*#to*!-otoidqh(7p
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['registration-6hyr.onrender.com', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['registration-6hyr.onrender.com', '127.0.0.1', 'localhost:3000', 'localhost:5000', 'localhost']
 
 import os
 PORT = os.getenv("PORT", "8000")
